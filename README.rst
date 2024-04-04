@@ -9,6 +9,8 @@ Show basic information about a set of GPS GPX files including an offline lookup 
 Example
 -------
 
+::
+
   >gpxlist tracks/*
   Filename                          Start time           Start place
   --------------------------------  -------------------  ---------------------------
@@ -22,7 +24,7 @@ Example
 Libraries
 ---------
 
-This tool uses `gpxpy` to parse GPX logs and `reverse_geocoder` to find geographic information.
+This tool uses `gpxpy <https://github.com/tkrajina/gpxpy>`_ to parse GPX logs and `reverse_geocoder <https://github.com/thampiman/reverse-geocoder>`_ to find geographic information.
 
 License
 -------
