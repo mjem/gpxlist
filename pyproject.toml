@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpxlist"
+version = "1.0"
+authors = [{name="Mike Elson", email="mike.elson@fastmail.com" }]
+description = "Show time and location summary for GPS GPX files"
+readme = "README.rst"
+dependencies = ["gpxpy",
+			    "reverse_geocoder",
+				"tabulate"]
+requires-python = ">=3.6"
+# GPLv3; https://www.gnu.org/licenses/gpl-3.0.rst
+license = "LICENSE.rst"
+
+[project.scripts]
+gpxlist = "gpxlist:main"
+
+[project.urls]
+"Homepage" = "https://github.com/mjem/gpxlist"
+# "Bug Tracker" = "https://github.com/your_name_here/something/issues"
+
+[tool.pytest]
