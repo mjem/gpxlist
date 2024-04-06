@@ -5,6 +5,7 @@
 import argparse
 from pathlib import Path
 from operator import itemgetter
+import importlib.metadata
 
 import gpxpy
 import reverse_geocoder
@@ -32,7 +33,13 @@ class GPXInfo:
 
 def main():
 	"""Command line entry point."""
-	parser = argparse.ArgumentParser()
+	try:
+		version = importlib.metadata.metadata("gpxlist")["version"]
+	except importlib.metadata.PackageNotFoundError:
+		version = "dev"
+
+	parser = argparse.ArgumentParser(prog="gpxlist")
+	parser.add_argument("--version", action="version", version="%(prog)s {v}".format(v=version))
 	parser.add_argument("FILES", nargs="+", help="Input file(s)")
 	args = parser.parse_args()
 	rows = []
